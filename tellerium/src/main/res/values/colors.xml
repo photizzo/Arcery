@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1069D9</color>
+    <color name="colorPrimaryDark">#1069D9</color>
+    <color name="colorAccent">#2CDBA0</color>
+    <color name="grey">#C2C2C2</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="pending_status">#FA6D82</color>
+    <color name="inprogress_status">#FFBE62</color>
+    <color name="completed_status">#26A595</color>
+    <color name="green">#26A595</color>
+    <color name="primaryTextColor">#626262</color>
+    <color name="lightGrey">#C2C2C2</color>
+    <color name="yellow">#FFBE62</color>
+    <color name="lightRed">#FA6D82</color>
+    <color name="gray">#E5E5E5</color>
+    <color name="red">#D62626</color>
+    <color name="blue">#1069D9</color>
+    <color name="textFieldColor">#FAFAFA</color>
+    <color name="dashboardBackgroundColor">#C2C2C2</color>
+    <color name="green_ind">#26A595</color>
+    <color name="green_ind1">#4526A595</color>
+    <color name="colorPrimaryProgressLight">#6626A595</color>
+    <color name="colorPieChartLight">#4026A595</color>
+    <color name="colorQC">#FEDCAC</color>
+    <color name="colorQA">#75F0B5</color>
+    <color name="colorCollected">#AEE2FF</color>
+
+
+</resources>

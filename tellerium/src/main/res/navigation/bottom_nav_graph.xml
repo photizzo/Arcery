@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/todaysFragment">
+
+    <fragment
+        android:id="@+id/todaysFragment"
+        android:name="com.agromall.tellerium.ui.weather.TodaysFragment"
+        android:label="TodaysFragment" />
+    <fragment
+        android:id="@+id/weeklyFragment"
+        android:name="com.agromall.tellerium.ui.weather.WeeklyFragment"
+        android:label="WeeklyFragment" />
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.agromall.tellerium.ui.weather.ShareFragment"
+        android:label="ShareFragment" />
+</navigation>

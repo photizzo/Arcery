@@ -1,0 +1,166 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply from: "../ktlint.gradle"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion Config.compileSdkVersion
+    buildToolsVersion Config.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.agromall.tellerium"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                        "room.incremental"     : "true",
+                        "room.expandProjection": "true"]
+            }
+        }
+        minSdkVersion Config.minSdkVersion
+        targetSdkVersion Config.targetSdkVersion
+        versionCode Config.versionCode
+        versionName Config.versionName
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
+        buildFeatures {
+            dataBinding true
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+
+dependencies {
+    implementation project(':presentation')
+    implementation project(':data')
+    implementation project(':domain')
+    implementation project(':cache')
+    implementation project(':remote')
+
+    implementation Libraries.kotlin
+    implementation Libraries.appCompat
+//    implementation Libraries.androidXExtensions
+    implementation Libraries.constraintLayout
+    implementation Libraries.materialDesign
+    implementation Libraries.androiXLegacy
+    implementation Libraries.recyclerView
+    implementation Libraries.hdodenhof
+
+    implementation Libraries.kotlin
+    implementation Libraries.javaxInject
+    implementation Libraries.coreKtx
+    implementation Libraries.viewModelKtx
+    implementation Libraries.fragmentKtx
+    implementation Libraries.lifecycleKtx
+    implementation Libraries.map
+    implementation Libraries.airlocation
+    implementation Libraries.mapLibrary
+
+    implementation Libraries.coroutineCore
+    implementation Libraries.coroutineAndroid
+    implementation Libraries.lifecycleKtx
+    implementation Libraries.viewModelKtx
+    implementation Libraries.coreKtx
+    implementation Libraries.liveDataKtx
+
+
+    implementation Libraries.timber
+    implementation Libraries.glide
+    kapt Libraries.glideCompiler
+    implementation Libraries.gson
+
+    implementation Libraries.lifecyleRuntime
+    implementation Libraries.roomRunTime
+    implementation Libraries.lifecycleExtensions
+    implementation Libraries.lifecycleRxStreams
+
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation Libraries.daggerHilt
+    kapt Libraries.daggerHiltProcessor
+    implementation Libraries.hiltLifecycle
+    kapt Libraries.hiltLifecycleProcessor
+    implementation Libraries.lottie
+
+    implementation Libraries.stepView
+    implementation Libraries.viewPager2
+    implementation Libraries.signaturePad
+    implementation Libraries.setho
+    implementation Libraries.mpAndroidChart
+
+    // Instrumentation test dependencies
+    androidTestImplementation TestLibraries.jUnit
+    androidTestImplementation TestLibraries.mockitoKotlin
+    androidTestImplementation TestLibraries.androidXJUnit
+    // Core library
+    androidTestImplementation TestLibraries.androidXCore
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation TestLibraries.androidXTestRunnner
+    androidTestImplementation TestLibraries.androidXTestRules
+
+    // Assertions
+    androidTestImplementation TestLibraries.androidXTruth
+    androidTestImplementation TestLibraries.googleTruth
+
+    // Espresso dependencies
+    androidTestImplementation TestLibraries.espresso
+    androidTestImplementation TestLibraries.espressoContrib
+    androidTestImplementation TestLibraries.espresooIntent
+    androidTestImplementation TestLibraries.espressoAccessiblity
+    androidTestImplementation TestLibraries.espressoWeb
+    androidTestImplementation TestLibraries.espresspIdlineConcurrent
+
+    def flowbinding_version = "1.0.0-alpha04"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-android:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-activity:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-appcompat:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-core:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-drawerlayout:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-lifecycle:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-navigation:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-preference:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-recyclerview:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-swiperefreshlayout:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-viewpager:${flowbinding_version}"
+    implementation "io.github.reactivecircus.flowbinding:flowbinding-viewpager2:${flowbinding_version}"
+    implementation('me.dm7.barcodescanner:zxing:1.9') {
+        exclude group: 'com.google.zxing'
+    }
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.hilt:hilt-work:1.0.0-alpha02'
+    // When using Kotlin.
+    kapt 'androidx.hilt:hilt-compiler:1.0.0-alpha02'
+
+    implementation group: 'com.cloudinary', name: 'cloudinary-android', version: '1.28.2'
+    def appCenterSdkVersion = '3.3.1'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+}

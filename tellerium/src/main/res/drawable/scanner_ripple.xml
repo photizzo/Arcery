@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/white">
+    <item>
+        <selector>
+            <item android:state_enabled="true">
+                <vector
+                    android:width="179dp"
+                    android:height="36dp"
+                    android:viewportWidth="179"
+                    android:viewportHeight="36">
+                    <path
+                        android:fillColor="#00000000"
+                        android:pathData="M5,0.5L174,0.5A4.5,4.5 0,0 1,178.5 5L178.5,31A4.5,4.5 0,0 1,174 35.5L5,35.5A4.5,4.5 0,0 1,0.5 31L0.5,5A4.5,4.5 0,0 1,5 0.5z"
+                        android:strokeWidth="1"
+                        android:strokeColor="#26A595" />
+                </vector>
+            </item>
+
+            <item android:state_enabled="false">
+                <shape android:shape="rectangle">
+                    <corners android:radius="10dp" />
+                    <solid android:color="@color/grey" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>
